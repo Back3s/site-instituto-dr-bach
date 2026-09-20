@@ -1,0 +1,8 @@
+# originais em alta resolução (o site usa as versões reduzidas de assets/images)
+_fonte/originais/
+
+# arquivos temporários e do sistema
+*.tmp
+Thumbs.db
+desktop.ini
+.DS_Store
