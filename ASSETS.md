@@ -1,6 +1,6 @@
 # Imagens do site
 
-As fotos abaixo são **provisórias**: vieram do Instagram do instituto (qualidade comprimida, com texto e logos na arte). Servem para o site já ter cara de site pronto enquanto o instituto não envia as fotos originais.
+As fotos abaixo são **provisórias**: a maioria veio do Instagram do instituto (qualidade comprimida, com texto e logos na arte); a foto do hero da Início é um banco de imagens gratuito. Servem para o site já ter cara de site pronto enquanto o instituto não envia as fotos originais.
 
 ## Como trocar uma foto
 1. Salve a nova foto (JPG) em `assets/images/<pasta>/` **com o mesmo nome** do arquivo atual.
@@ -12,7 +12,8 @@ Os caminhos, os textos alternativos (alt) e o enquadramento de cada foto ficam n
 ## Fotos atuais (provisórias)
 | Imagem | Onde é usada | Tamanho atual | Tamanho ideal (versão final) | O que o instituto precisa enviar |
 |---|---|---|---|---|
-| `hero/turma-alunos.jpg` | Início: hero (moldura à direita). Sobre: foto de abertura | 1800 × 1800 (original 3024 × 3024) | 1600 × 1600 (quadrada). Se preferir 4:3 (1600 × 1200), me avise que ajusto a moldura | Foto original da turma, sem edição e com boa luz |
+| `hero/pratica-consultorio.jpg` | Início: hero (moldura à direita, foto de banco de imagens — Pexels, licença gratuita, foto de Arda Kaykısız, pexels.com/photo/19976604) | 1800 × 1202 (original 6016 × 4016) | 1600 × 800 (2:1) | Foto real do Instituto para substituir esta foto de banco de imagens |
+| `hero/turma-alunos.jpg` | Sobre: foto de abertura | 1800 × 1800 (original 3024 × 3024) | 1600 × 1600 (quadrada). Se preferir 4:3 (1600 × 1200), me avise que ajusto a moldura | Foto original da turma, sem edição e com boa luz |
 | `formaturas/entrega-certificado-recepcao.jpg` | Início: Formaturas e conquistas (imagem principal, maior) | 1800 × 1800 (original 3024 × 3024) | 1200 × 900 (4:3) ou até 1600 × 1600 | Fotos originais de entrega de certificado |
 | `formaturas/tsb-entrega-certificado.jpg` | Curso TSB (ao lado das vantagens). Início: Formaturas (segunda imagem) | 1080 × 1350 | 1200 × 1500 (4:5), **sem texto na arte** | Foto original da entrega do certificado do TSB |
 | `pratica/professor-conversando-alunos.jpg` | Início: "Do zero ao primeiro emprego" | 1350 × 1688 | 1200 × 1500 (4:5), sem texto na arte | Foto original do professor orientando alunos |

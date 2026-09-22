@@ -32,7 +32,8 @@ Quando você enviar cada item, ele entra no lugar certo.
 
 ## Conteúdo e imagens
 - [ ] Logo em vetor (SVG). Hoje usamos PNG recortado da imagem enviada
-- [ ] Fotos originais em alta resolução, **sem texto nem logos sobrepostos**: aulas práticas, estrutura da clínica, equipe, entregas de certificado (lista completa e tamanhos em ASSETS.md). As 8 fotos atuais são provisórias, tiradas do Instagram
+- [ ] Fotos originais em alta resolução, **sem texto nem logos sobrepostos**: aulas práticas, estrutura da clínica, equipe, entregas de certificado (lista completa e tamanhos em ASSETS.md). As 8 fotos tiradas do Instagram são provisórias
+- [ ] **Foto do hero da Início** (`hero/pratica-consultorio.jpg`): pedido do usuário em 22/09/2026, é uma foto de banco de imagens (Pexels, licença gratuita, atribuição não obrigatória — pexels.com/photo/19976604, fotógrafo Arda Kaykısız), **não é uma foto do Instituto**. Trocar pela foto real do Instituto assim que houver uma boa (a página Sobre já usa a foto real da turma)
 - [ ] **Autorização de uso de imagem (LGPD)** de todos os alunos, professores e pacientes que aparecem nas fotos atuais e nas futuras
 - [ ] **Permissão para exibir a marca FACOP**: ela aparece na arte `pratica/aula-pratica-colagem.jpg` (Início, seção Prática real, e página do ASB). Se não houver permissão, a foto sai
 - [ ] **Nome do professor** da foto `equipe/professor-jaleco.jpg`. Hoje o card se chama "Professor da equipe", sem cargo e sem legenda com nome

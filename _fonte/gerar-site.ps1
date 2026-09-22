@@ -40,6 +40,7 @@ $TURMA         = 'Turma 2026 · Inscrições abertas'
 # pos = object-position (enquadramento do recorte). Não coloque texto por cima das artes 02, 05, 06 e 08.
 $IMAGENS = [ordered]@{
   turma     = @{ pasta='hero';       arq='turma-alunos';                  pos='50% 40%'; alt='Turma de alunos do Instituto Dr. Bach reunida com o certificado digital' }
+  heroFoto  = @{ pasta='hero';       arq='pratica-consultorio';           pos='50% 46%'; alt='Procedimento odontológico em consultório, com profissional atendendo paciente' }   # foto de banco de imagens (Pexels, licença gratuita, sem necessidade de atribuição — pexels.com/photo/19976604); TODO: substituir por foto real do Instituto quando disponível (ver PENDENCIAS.md)
   tsb       = @{ pasta='formaturas'; arq='tsb-entrega-certificado';       pos='';        alt='Aluna do curso Técnico em Saúde Bucal recebendo o certificado ao lado de professores' }
   recepcao  = @{ pasta='formaturas'; arq='entrega-certificado-recepcao';  pos='';        alt='Equipe e aluno do Instituto Dr. Bach com o certificado de conclusão' }
   professor = @{ pasta='pratica';    arq='professor-conversando-alunos';  pos='';        alt='Professor conversando com alunos durante orientação no instituto' }
@@ -69,7 +70,7 @@ $faq = @(
   @{ p='Qual a duração dos cursos?';
      r='As 2ª licenciaturas em Pedagogia e em Música duram 12 meses. Para os demais cursos, consulte a nossa equipe no WhatsApp.' },
   @{ p='Preciso ter experiência na área?';
-     r='Fale com a nossa equipe para saber os requisitos de cada curso. Ela vai te orientar sobre o melhor caminho para o seu momento.' }
+     r='Fale com a nossa equipe para saber os requisitos de cada curso.' }
 )
 
 # Cursos (a ordem daqui é a ordem no site; saúde bucal primeiro)
@@ -78,20 +79,20 @@ $cursos = @(
      nivel='Técnico'; modal='EAD ou semipresencial, com aulas práticas presenciais'; modalCurta='EAD ou semipresencial'; duracao=''; publico=''; mec=$true;
      coord='Dr. Márcio Santiago · CRO-MS 8513'; online=$false;
      preco=@{ entrada='R$ 600,00'; entradaObs='Pix, dinheiro ou cartão de crédito'; parcelas=''; parcelasObs='' };
-     card='Mais responsabilidade, mais mercado e uma carreira sólida na odontologia, com prática em pacientes reais.';
-     lead='Mais responsabilidade, mais mercado e uma carreira sólida na odontologia. Formação com aulas práticas presenciais em pacientes reais, com acompanhamento de professores.';
+     card='Mais responsabilidade e mais mercado, com prática em pacientes reais.';
+     lead='Formação técnica em saúde bucal, com mais responsabilidade no consultório. Aulas práticas presenciais em pacientes reais, com acompanhamento de professores.';
      lista=@('Aulas práticas presenciais com pacientes reais','Acompanhamento de professores durante a prática','Teoria em EAD ou semipresencial, no seu ritmo','Certificado reconhecido pelo MEC');
      aprender=@();
-     para='Para quem quer construir uma carreira sólida na odontologia e ir além da capacitação, conquistando uma formação técnica.';
+     para='Para quem quer uma formação técnica em odontologia, com mais responsabilidade do que a capacitação.';
      rel=@('asb','pedagogia','musica') },
   @{ slug='asb'; titulo='Auxiliar em Saúde Bucal'; sigla='ASB'; tag='Saúde bucal · Capacitação'; area='saude'; icone='tooth'; saude=$true;
      nivel='Capacitação'; modal='EAD ou semipresencial, com aulas práticas presenciais'; modalCurta='EAD ou semipresencial'; duracao=''; publico=''; mec=$false;
      coord='Dr. Márcio Santiago · CRO-MS 8513'; online=$false; preco=$null;
-     card='Entrada rápida no mercado: aprenda a atuar ao lado do cirurgião-dentista, com prática em pacientes reais.';
-     lead='Entrada rápida no mercado. Aprenda a atuar ao lado do cirurgião-dentista, com rotina de consultório e aulas práticas presenciais em pacientes reais.';
+     card='Aprenda a atuar ao lado do cirurgião-dentista e entre rápido no mercado, com prática em pacientes reais.';
+     lead='Aprenda a atuar ao lado do cirurgião-dentista, com rotina de consultório e aulas práticas presenciais em pacientes reais.';
      lista=@('Aulas práticas presenciais com pacientes reais','Acompanhamento de professores durante a prática','Teoria em EAD ou semipresencial, no seu ritmo','Entrada rápida no mercado');
      aprender=@();
-     para='Para quem quer entrar na área da saúde e começar uma nova carreira na odontologia. O mercado está em crescimento: cada consultório precisa de pelo menos um auxiliar qualificado.';
+     para='Para quem quer entrar na área da saúde e começar uma nova carreira na odontologia. O mercado está em expansão, e cada consultório precisa de pelo menos um auxiliar qualificado.';
      rel=@('tsb','pedagogia','gestao-publica') },
   @{ slug='pedagogia'; titulo='2ª Licenciatura em Pedagogia'; sigla=''; tag='Educação · Graduação'; area='educacao'; icone='book'; saude=$false;
      nivel='Graduação · 2ª Licenciatura'; modal='100% online'; modalCurta='100% online'; duracao='12 meses'; publico='Quem já possui graduação'; mec=$true;
@@ -101,40 +102,40 @@ $cursos = @(
      lead='Formação pedagógica rápida para quem já tem graduação: 12 meses, 100% online, com certificado reconhecido pelo MEC e início imediato.';
      lista=@('Formação pedagógica rápida, em 12 meses','100% online: estude de onde estiver','Início imediato','Certificado reconhecido pelo MEC');
      aprender=@();
-     para='Para quem sonha em atuar na educação, ou já atua e quer conquistar a formação de licenciatura.';
+     para='Para quem já tem graduação e quer atuar na educação, com uma segunda licenciatura.';
      rel=@('musica','educacao-especial','aee') },
   @{ slug='musica'; titulo='2ª Licenciatura em Música'; sigla=''; tag='Educação · Graduação'; area='educacao'; icone='music'; saude=$false;
      nivel='Graduação · 2ª Licenciatura'; modal='100% online'; modalCurta='100% online'; duracao='12 meses'; publico='Quem já possui graduação'; mec=$true;
      coord=''; online=$true;
      preco=@{ entrada='R$ 600,00'; entradaObs='Pix, dinheiro ou cartão de crédito'; parcelas='11x de R$ 400,00'; parcelasObs='no boleto' };
-     card='Transforme sua paixão pela música em profissão: 12 meses, 100% online e reconhecida pelo MEC.';
-     lead='Transforme sua paixão pela música em profissão e leve arte e cultura para dentro das salas de aula. 12 meses, 100% online, com certificado reconhecido pelo MEC e início imediato.';
-     lista=@('Formação para levar música e cultura às salas de aula','12 meses, 100% online','Início imediato','Certificado reconhecido pelo MEC');
+     card='Uma segunda licenciatura em Música, 100% online, em 12 meses e reconhecida pelo MEC.';
+     lead='Uma segunda licenciatura para quem já ama música e quer levá-la para a sala de aula. 12 meses, 100% online, com certificado reconhecido pelo MEC e início imediato.';
+     lista=@('Você se forma para dar aula de música','12 meses, 100% online','Início imediato','Certificado reconhecido pelo MEC');
      aprender=@();
-     para='Para quem ama música e quer transformá-la em carreira na educação.';
+     para='Para quem já é formado, ama música e quer dar aula.';
      rel=@('pedagogia','educacao-especial','tsb') },
   @{ slug='educacao-especial'; titulo='2ª Licenciatura em Educação Especial'; sigla=''; tag='Educação · Graduação'; area='educacao'; icone='smile'; saude=$false;
      nivel='Graduação · 2ª Licenciatura'; modal='100% online'; modalCurta='100% online'; duracao=''; publico='Quem já possui graduação'; mec=$true;
      coord=''; online=$true; preco=$null;
-     card='Prepare-se para incluir e transformar vidas, atuando com crianças e jovens que precisam de um olhar cuidadoso.';
-     lead='Prepare-se para incluir e transformar vidas, atuando com crianças e jovens que precisam de um olhar cuidadoso. 100% online, com certificado reconhecido pelo MEC.';
-     lista=@('Formação para atuar com crianças e jovens que precisam de um olhar cuidadoso','Foco em inclusão e desenvolvimento humano','100% online: estude de onde estiver','Certificado reconhecido pelo MEC');
+     card='Uma segunda licenciatura em Educação Especial, para atuar com inclusão em sala de aula.';
+     lead='Uma formação em educação inclusiva, para atuar com crianças e jovens em sala de aula. 100% online, com certificado reconhecido pelo MEC.';
+     lista=@('Você atua com inclusão de crianças e jovens em sala de aula','Foco em inclusão e desenvolvimento humano','100% online: estude de onde estiver','Certificado reconhecido pelo MEC');
      aprender=@();
-     para='Para educadores e profissionais que querem atuar com inclusão e fazer diferença na vida dos alunos.';
+     para='Para quem já tem graduação e quer se especializar em inclusão escolar.';
      rel=@('aee','pedagogia','musica') },
   @{ slug='gestao-publica'; titulo='Tecnólogo em Gestão Pública'; sigla=''; tag='Educação · Tecnólogo'; area='educacao'; icone='landmark'; saude=$false;
      nivel='Graduação · Tecnólogo'; modal='100% online'; modalCurta='100% online'; duracao=''; publico=''; mec=$true;
      coord=''; online=$true; preco=$null;
-     card='Seu futuro está próximo: formação 100% online voltada para a administração pública e novas oportunidades de carreira.';
-     lead='Seu futuro está próximo: formação 100% online voltada para a administração pública e para novas oportunidades de carreira, com certificado reconhecido pelo MEC.';
-     lista=@('Formação voltada à administração pública','Foco em novas oportunidades de carreira','100% online: estude de onde estiver','Certificado reconhecido pelo MEC');
+     card='Tecnólogo 100% online voltado para a administração pública.';
+     lead='Uma graduação tecnológica 100% online, voltada para quem quer atuar na administração pública, com certificado reconhecido pelo MEC.';
+     lista=@('Formação voltada à administração pública','Para quem atua ou quer atuar no setor público','100% online: estude de onde estiver','Certificado reconhecido pelo MEC');
      aprender=@();
-     para='Para quem quer atuar na gestão pública ou abrir novas portas no mercado de trabalho com uma graduação tecnológica.';
+     para='Para quem quer atuar na gestão pública, ou já atua e quer uma graduação tecnológica.';
      rel=@('pedagogia','tsb','asb') },
   @{ slug='aee'; titulo='Atendimento Educacional Especializado'; sigla='AEE'; tag='Educação · Curso'; area='educacao'; icone='users'; saude=$false;
      nivel=''; modal=''; modalCurta=''; duracao=''; publico=''; mec=$false;
      coord=''; online=$false; preco=$null;
-     card='Tecnologias assistivas, materiais adaptados e apoio individualizado para incluir de verdade.';
+     card='Tecnologias assistivas, materiais adaptados e apoio individualizado no atendimento educacional especializado.';
      lead='Atendimento complementar ao ensino regular, com tecnologias assistivas e materiais adaptados, apoio individualizado ou em pequenos grupos e atividades que promovem autonomia e participação.';
      lista=@('Tecnologias assistivas e materiais adaptados','Apoio individualizado ou em pequenos grupos','Atividades que promovem autonomia e participação','Salas de recursos multifuncionais e ambientes inclusivos');
      aprender=@();
@@ -146,7 +147,7 @@ $cursos = @(
 $comparativo = @(
   @('Modalidade',       'EAD ou semipresencial, com aulas práticas presenciais', 'EAD ou semipresencial, com aulas práticas presenciais'),
   @('Prática',          'Com pacientes reais e acompanhamento de professores',   'Com pacientes reais e acompanhamento de professores'),
-  @('Perfil',           'Entrada rápida no mercado',                             'Mais responsabilidade, mais mercado e uma carreira sólida'),
+  @('Perfil',           'Entrada rápida no mercado',                             'Mais responsabilidade e mercado mais amplo'),
   @('Certificado MEC',  '',                                                      'Reconhecido pelo MEC'),   # TODO: confirmar o do ASB
   @('Duração',          '',                                                      ''),                       # TODO
   @('O que faz',        '',                                                      ''),                       # TODO
@@ -370,15 +371,18 @@ function Card($c) {
   if ($c.duracao)    { $meta += '<li>' + $c.duracao + '</li>' }
   if ($c.modalCurta) { $meta += '<li>' + $c.modalCurta + '</li>' }
   if ($c.mec)        { $meta += '<li class="mec">Reconhecido pelo MEC</li>' }
-  if ($meta) { $meta = '        <ul class="curso__meta">' + $meta + '</ul>' + "`n" }
-  '      <article class="curso" data-area="' + $c.area + '">' + "`n" +
-  '        <svg class="curso__marca" aria-hidden="true"><use href="#i-' + $c.icone + '"/></svg>' + "`n" +
-  '        <span class="tag">' + $c.tag + '</span>' + "`n" +
-  '        <h3>' + $c.titulo + $sig + '</h3>' + "`n" +
-  '        <p>' + $c.card + '</p>' + "`n" +
+  if ($meta) { $meta = '          <ul class="curso__meta">' + $meta + '</ul>' + "`n" }
+  # o card inteiro é um link só (não tem outro link dentro): o "botão" é um <span> com cara de botão
+  '      <a class="curso" data-area="' + $c.area + '" href="curso-' + $c.slug + '.html" aria-label="' + $c.titulo + ' — conhecer o curso">' + "`n" +
+  '        <span class="curso__marca" aria-hidden="true"><svg class="i" aria-hidden="true"><use href="#i-' + $c.icone + '"/></svg></span>' + "`n" +
+  '        <div class="curso__corpo">' + "`n" +
+  '          <span class="tag">' + $c.tag + '</span>' + "`n" +
+  '          <h3>' + $c.titulo + $sig + '</h3>' + "`n" +
+  '          <p>' + $c.card + '</p>' + "`n" +
   $meta +
-  '        <a class="curso__link" href="curso-' + $c.slug + '.html">Conhecer o curso <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>' + "`n" +
-  '      </article>' + "`n"
+  '          <span class="curso__cta">Conhecer o curso <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></span>' + "`n" +
+  '        </div>' + "`n" +
+  '      </a>' + "`n"
 }
 
 function TambemOferecemos() {
@@ -514,7 +518,7 @@ function Docentes($classeSecao) {
     <header class="secao__cab reveal">
       <span class="pill pill--roxo">Quem ensina</span>
       <h2 class="secao__titulo">Direção e <em>professores</em></h2>
-      <p class="secao__lead">Profissionais que acompanham você de perto, da teoria à prática.</p>
+      <p class="secao__lead">Quem dirige e quem dá aula no Instituto.</p>
     </header>
     <div class="docentes">
 $h    </div>
@@ -552,11 +556,15 @@ $waSaudeBucal = ZapLink 'Olá! Quero saber mais sobre os cursos de saúde bucal 
 $hero = @"
 <!-- ============ HERO ============ -->
 <section class="hero hero--v4" id="inicio">
+  <div class="hero__bg">
+    $(Pic 'heroFoto' '100vw' 'hero__bgimg' $true)
+  </div>
+
   <div class="container hero__grid">
     <div class="hero__texto">
-      <span class="pill pill--ouro">Cursos com prática real</span>
-      <h1 class="hero__titulo">Aqui você <span class="leve">não só aprende.</span><br>Você aprende <span class="destaque">fazendo.</span></h1>
-      <p class="hero__lead">Cursos de saúde bucal e graduação com certificado reconhecido pelo MEC e prática real com pacientes.</p>
+      <span class="pill pill--ouro">Saúde bucal e licenciaturas</span>
+      <h1 class="hero__titulo">Prática com <span class="destaque">paciente real</span>,<br><span class="leve">desde o primeiro dia.</span></h1>
+      <p class="hero__lead">Cursos de saúde bucal e de licenciatura com certificado reconhecido pelo MEC. Teoria no seu ritmo e prática com pacientes de verdade.</p>
 
       <div class="hero__acoes">
         <a class="btn btn--ouro-hero btn--lg" href="$waMatricula" target="_blank" rel="noopener">Quero me matricular <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -568,10 +576,6 @@ $hero = @"
         <li class="selo"><svg class="i" aria-hidden="true"><use href="#i-heart"/></svg> Prática real</li>
         <li class="selo"><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg> EAD ou semipresencial</li>
       </ul>
-    </div>
-
-    <div class="hero__foto">
-      $(Pic 'turma' '(max-width: 960px) 92vw, 520px' 'img-r img-r--crop' $true '50% 36%')
     </div>
   </div>
 
@@ -616,7 +620,7 @@ $difs = @"
       <article class="dif reveal">
         <span class="dif__icone"><svg class="i" aria-hidden="true"><use href="#i-heart"/></svg></span>
         <h3>Prática real</h3>
-        <p>Pacientes reais desde o primeiro dia. Você aprende fazendo, com supervisão de profissionais experientes.</p>
+        <p>Você atende paciente real desde a primeira aula prática, com um professor acompanhando de perto.</p>
       </article>
       <article class="dif reveal">
         <span class="dif__icone"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span>
@@ -626,12 +630,12 @@ $difs = @"
       <article class="dif reveal">
         <span class="dif__icone"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span>
         <h3>Certificado reconhecido pelo MEC</h3>
-        <p>Formações com certificado reconhecido pelo MEC, para você seguir com segurança.</p>
+        <p>Certificado reconhecido pelo MEC nas licenciaturas, no tecnólogo e no Técnico em Saúde Bucal.</p>
       </article>
       <article class="dif reveal">
         <span class="dif__icone"><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg></span>
         <h3>Estude no seu ritmo</h3>
-        <p>EAD ou semipresencial: teoria online que cabe na sua rotina e práticas presenciais.</p>
+        <p>Teoria on-line, no seu horário, e prática presencial nos cursos de saúde bucal.</p>
       </article>
     </div>
   </div>
@@ -645,8 +649,8 @@ $secCursos = @"
   <div class="container">
     <header class="secao__cab reveal">
       <span class="pill pill--roxo">Nossos cursos</span>
-      <h2 class="secao__titulo">Leve sua jornada ao <em>próximo nível</em></h2>
-      <p class="secao__lead">Escolha a formação ideal para o seu momento. Comece pela saúde bucal, nosso carro-chefe, ou pela educação.</p>
+      <h2 class="secao__titulo">Da capacitação à <em>segunda graduação</em></h2>
+      <p class="secao__lead">Comece pela saúde bucal, o carro-chefe do Instituto, ou por uma segunda licenciatura 100% online.</p>
     </header>
 
     <div class="filtros reveal" role="tablist" aria-label="Filtrar cursos por área">
@@ -675,9 +679,9 @@ $pratica = @"
   <div class="container pratica__grid">
     <div class="pratica__texto">
       <span class="pill pill--ouro reveal">Prática real</span>
-      <h2 class="pratica__titulo reveal">Não basta saber. <span class="leve">Tem que saber</span> <span class="destaque">fazer.</span></h2>
-      <p class="pratica__frase reveal">A teoria é fundamental, mas a prática é o que te eleva ao próximo nível.</p>
-      <p class="reveal">Isso não se aprende vendo, se aprende fazendo. Nos cursos de saúde bucal você atende pacientes reais, com o acompanhamento de professores ao seu lado.</p>
+      <h2 class="pratica__titulo reveal">Você atende <span class="leve">pacientes</span> <span class="destaque">reais.</span></h2>
+      <p class="pratica__frase reveal">Prática com gente de verdade, não só com livro.</p>
+      <p class="reveal">Nos cursos de saúde bucal, você atende pacientes reais com um professor ao seu lado, orientando cada passo.</p>
       <a class="btn btn--magenta btn--lg reveal" href="$waSaudeBucal" target="_blank" rel="noopener">Quero praticar com pacientes reais <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="pratica__midia reveal">
@@ -698,7 +702,7 @@ $mercado = @"
   <div class="container mercado__in">
     <header class="secao__cab reveal">
       <span class="pill pill--roxo">Mercado da odontologia</span>
-      <h2 class="secao__titulo">Você sabia que o mercado <em>odontológico</em> está crescendo?</h2>
+      <h2 class="secao__titulo">O tamanho do mercado <em>odontológico</em> no Brasil</h2>
     </header>
     <div class="stats">
       <div class="stat reveal">
@@ -710,7 +714,7 @@ $mercado = @"
         <span class="stat__rotulo">consultórios odontológicos, e cada um precisa de pelo menos 1 auxiliar qualificado</span>
       </div>
     </div>
-    <p class="mercado__fecho reveal">Quem tem formação qualificada sempre encontra espaço no mercado.</p>
+    <p class="mercado__fecho reveal">É um mercado grande, e começa com gente qualificada.</p>
     <p class="fonte">Fonte: $FONTE_MERCADO. <!-- TODO: confirmar link da fonte original antes de publicar --></p>
     <a class="btn btn--magenta btn--lg reveal" href="$waSaudeBucal" target="_blank" rel="noopener">Quero me qualificar <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
   </div>
@@ -724,8 +728,8 @@ $linha = @"
   <div class="container">
     <header class="secao__cab reveal">
       <span class="pill pill--roxo">Como funciona</span>
-      <h2 class="secao__titulo">Do zero ao <em>primeiro emprego</em></h2>
-      <p class="secao__lead">Quatro passos simples para começar a sua formação.</p>
+      <h2 class="secao__titulo">Os passos até o <em>seu certificado</em></h2>
+      <p class="secao__lead">Veja como começar, em quatro passos.</p>
     </header>
     <div class="linha-wrap">
       <div class="linha__img reveal">
@@ -735,7 +739,7 @@ $linha = @"
       <li class="reveal"><span class="linha__n">1</span><h3>Escolha o curso</h3><p>Veja as opções de saúde bucal e de educação e escolha a que combina com você.</p></li>
       <li class="reveal"><span class="linha__n">2</span><h3>Faça sua matrícula</h3><p>Fale com a nossa equipe pelo WhatsApp e garanta sua vaga. Nas licenciaturas, o início é imediato.</p></li>
       <li class="reveal"><span class="linha__n">3</span><h3>Estude e pratique</h3><p>Teoria online no seu ritmo e, nos cursos de saúde bucal, aulas práticas presenciais com pacientes reais.</p></li>
-      <li class="reveal"><span class="linha__n">4</span><h3>Receba seu certificado</h3><p>Conclua a formação e dê o próximo passo na sua carreira.</p></li>
+      <li class="reveal"><span class="linha__n">4</span><h3>Receba seu certificado</h3><p>Você recebe o certificado de conclusão do curso escolhido.</p></li>
     </ol>
     </div>
   </div>
@@ -751,7 +755,7 @@ $formaturas = @"
     <header class="secao__cab reveal">
       <span class="pill pill--roxo">Nossos alunos</span>
       <h2 class="secao__titulo">Formaturas e <em>conquistas</em></h2>
-      <p class="secao__lead">Cada certificado entregue é uma nova etapa na vida de um aluno.</p>
+      <p class="secao__lead">Fotos de turmas que já passaram pelo Instituto.</p>
     </header>
     <div class="forma reveal">
       $(Pic 'recepcao' '(max-width: 960px) 92vw, 480px' 'img-r' $false)
@@ -801,8 +805,8 @@ $faqHtml    </div>
 
 "@
 
-$homeMain = $hero + $difs + $secCursos + $pratica + $mercado + $linha + (Docentes '') + $formaturas + $insta + $faqSec + (Localizacao) + (CtaFinal 'Ficou interessado? Entre em contato!' 'Fale agora com a nossa equipe e descubra qual curso combina com você.')
-Salvar 'index.html' (Pagina 'inicio' 'Instituto Dr. Bach | Cursos de Saúde Bucal e Licenciaturas com prática real' 'Cursos de saúde bucal (TSB e ASB) e 2ª licenciatura com certificado reconhecido pelo MEC e prática real com pacientes. Fale com o Instituto Dr. Bach pelo WhatsApp.' $homeMain ($orgLd + "`n" + (PreloadImg 'turma' '(max-width: 960px) 92vw, 480px')) 'Olá! Vim pelo site do Instituto Dr. Bach e quero me matricular. Pode me passar mais informações?' $true)
+$homeMain = $hero + $difs + $secCursos + $pratica + $mercado + $linha + (Docentes '') + $formaturas + $insta + $faqSec + (Localizacao) + (CtaFinal 'Ficou interessado? Entre em contato!' 'Fale com a nossa equipe pelo WhatsApp e tire suas dúvidas sobre os cursos.')
+Salvar 'index.html' (Pagina 'inicio' 'Instituto Dr. Bach | Cursos de Saúde Bucal e Licenciaturas com prática real' 'Cursos de saúde bucal (TSB e ASB) e 2ª licenciatura com certificado reconhecido pelo MEC e prática real com pacientes. Fale com o Instituto Dr. Bach pelo WhatsApp.' $homeMain ($orgLd + "`n" + (PreloadImg 'heroFoto' '100vw')) 'Olá! Vim pelo site do Instituto Dr. Bach e quero me matricular. Pode me passar mais informações?' $true)
 
 # ---------------- CURSOS ----------------
 $comp = ''
@@ -830,7 +834,7 @@ $comp        </tbody>
 </section>
 
 "@
-$cursosMain = (Banner @(@('Início', 'index.html'), @('Cursos', $null)) $null 'Nossos cursos' 'Comece pela saúde bucal, nosso carro-chefe, ou pela educação com 2ª licenciatura e tecnólogo. Conheça os detalhes de cada curso.' 'book' $null) + @"
+$cursosMain = (Banner @(@('Início', 'index.html'), @('Cursos', $null)) $null 'Nossos cursos' 'Veja os cursos de saúde bucal, as licenciaturas e o tecnólogo 100% online.' 'book' $null) + @"
 <section class="secao secao--lilas">
   <div class="container">
     <div class="filtros" role="tablist" aria-label="Filtrar cursos por área">
@@ -845,7 +849,7 @@ $(TambemOferecemos)
   </div>
 </section>
 
-"@ + $secComp + (CtaFinal 'Não sabe qual escolher?' 'Fale com a nossa equipe e descubra qual curso combina com o seu momento e com os seus objetivos.')
+"@ + $secComp + (CtaFinal 'Não sabe qual escolher?' 'Fale com a nossa equipe pelo WhatsApp. Ela ajuda você a escolher o curso certo.')
 Salvar 'cursos.html' (Pagina 'cursos' 'Cursos | Instituto Dr. Bach' 'Conheça os cursos do Instituto Dr. Bach: Técnico e Auxiliar em Saúde Bucal, 2ª licenciaturas em Pedagogia, Música e Educação Especial, Gestão Pública e AEE.' $cursosMain '' '')
 
 # ---------------- UMA PÁGINA POR CURSO ----------------
@@ -874,7 +878,7 @@ foreach ($c in $cursos) {
   }
   $pratica2 = ''
   if ($c.saude) {
-    $textoPratica = '<p class="cs__texto">Você estuda a teoria em EAD ou semipresencial, no seu ritmo, e faz as aulas práticas de forma presencial, atendendo pacientes reais com o acompanhamento de professores. Isso não se aprende vendo, se aprende fazendo.</p>'
+    $textoPratica = '<p class="cs__texto">Você estuda a teoria em EAD ou semipresencial, no seu ritmo, e faz as aulas práticas de forma presencial, com pacientes reais e um professor acompanhando de perto.</p>'
     if ($c.imgPratica) {
       $aviso = ''; if ($c.imgPratica -eq 'colagem') { $aviso = '        <!-- FACOP: a arte exibe a marca da FACOP. Confirmar com o instituto a permissão de exibir a marca (ver PENDENCIAS.md) -->' + "`n" }
       $fina = ''; if ($c.imgPratica -eq 'pratica') { $fina = ' cs__duas--fina' }
@@ -1014,14 +1018,14 @@ $sobreMain = (Banner @(@('Início', 'index.html'), @('Sobre', $null)) $null 'Sob
     </div>
     <div class="sobre__corpo reveal">
       <p>O $($INST.nome) oferece capacitação, extensão, pós-graduação e cursos técnicos e de graduação nas áreas da saúde e da educação.</p>
-      <p>Nossa identidade une saúde, educação, cuidado e conhecimento. Por isso, nossas formações valorizam a prática real, como o atendimento a pacientes reais na saúde bucal, e o acompanhamento próximo de uma direção e de uma coordenação presentes.</p>
+      <p>Nossa identidade une saúde, educação, cuidado e conhecimento. Por isso, nossas formações valorizam a prática real, como o atendimento a pacientes reais na saúde bucal, com o acompanhamento de perto de quem dirige e coordena o Instituto.</p>
       <p>Nossos cursos de graduação e o Técnico em Saúde Bucal têm certificado reconhecido pelo MEC. Contamos com a parceria da $($INST.parceria).</p>
       <a class="btn btn--magenta btn--lg" href="cursos.html">Conheça nossos cursos <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
 
-"@ + $faixa + (Docentes 'secao--lilas') + (CtaFinal 'Faça parte do Instituto' 'Escolha seu curso, fale com a nossa equipe e comece uma nova etapa na sua carreira com o Instituto Dr. Bach.')
+"@ + $faixa + (Docentes 'secao--lilas') + (CtaFinal 'Faça parte do Instituto' 'Fale com a nossa equipe, escolha o curso e comece a sua formação.')
 Salvar 'sobre.html' (Pagina 'sobre' 'Sobre | Instituto Dr. Bach' 'Conheça o Instituto de Desenvolvimento Humano Dr. Bach: saúde, educação e prática real, com direção, coordenação e professores que acompanham você de perto.' $sobreMain '' '')
 
 # ---------------- CONTATO ----------------

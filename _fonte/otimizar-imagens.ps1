@@ -12,9 +12,9 @@ $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 $fonte = Split-Path -Parent $MyInvocation.MyCommand.Path
 $root  = Split-Path -Parent $fonte
-$MAX   = 1800
+$MAX   = 2200   # a foto do hero agora cobre a seção inteira (fundo), por isso o teto subiu de 1800 para 2200
 $QUALIDADE_WEBP = 0.80
-$LARGURAS = @(480, 800, 1200, 1800)
+$LARGURAS = @(480, 800, 1200, 1800, 2200)
 $pastas = 'hero', 'pratica', 'equipe', 'formaturas', 'cursos'
 
 $edge = @("${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe", "$env:ProgramFiles\Microsoft\Edge\Application\msedge.exe", "$env:ProgramFiles\Google\Chrome\Application\chrome.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1
