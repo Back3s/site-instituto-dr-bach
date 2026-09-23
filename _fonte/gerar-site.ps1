@@ -291,42 +291,20 @@ $nav      <a class="btn $clsCta nav__cta" href="$wa" target="_blank" rel="noopen
 
 function Footer($waTxt) {
   $wa = ZapLink $waTxt
-  $info = ''
-  if ($INST.cidadeUF)  { $info += '      <span>' + $INST.cidadeUF + '</span>' + "`n" }
-  if ($INST.endereco)  { $info += '      <span>' + $INST.endereco + '</span>' + "`n" }
-  if ($INST.email)     { $info += '      <a href="mailto:' + $INST.email + '">' + $INST.email + '</a>' + "`n" }
-  if ($INST.horario)   { $info += '      <span>' + $INST.horario + '</span>' + "`n" }
-  if ($INST.cnpj)      { $info += '      <span>CNPJ ' + $INST.cnpj + '</span>' + "`n" }
-  if ($info) { $info = '    <div class="rodape__info">' + "`n" + $info + '    </div>' + "`n" }
 @"
 
 </main>
 
 <footer class="rodape">
-  <div class="container rodape__grid">
-    <div class="rodape__marca">
+  <div class="container rodape__simples">
+    <a class="rodape__logo" href="index.html" aria-label="$($INST.curto) — início">
       <img src="assets/logo-branco.png" alt="$($INST.curto) de Desenvolvimento Humano" width="$LW" height="$LH" loading="lazy">
-      <p>$($INST.nome). Saúde, educação e desenvolvimento humano: conhecimento que cuida e transforma.</p>
-      <div class="parceria parceria--rodape">
-        <span class="parceria__rotulo">Em parceria com</span>
-        <span class="parceria__marca" aria-label="$($INST.parceria)">$($INST.parceria)</span>
-      </div>
-$info    </div>
-    <nav aria-label="Rodapé">
-      <h4>Navegação</h4>
-      <a href="index.html">Início</a>
-      <a href="cursos.html">Cursos</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="contato.html">Contato</a>
-      <a href="inscricao.html">Cadastro de inscrição</a>
-      <a href="politica-de-privacidade.html">Política de Privacidade</a>
-    </nav>
-    <div>
-      <h4>Contato</h4>
+    </a>
+    <nav class="rodape__links" aria-label="Rodapé">
       <a href="https://wa.me/$ZAP" target="_blank" rel="noopener">WhatsApp: $($INST.zapExibe)</a>
       <a href="$($INST.instagram)" target="_blank" rel="noopener">Instagram: $($INST.instagramUser)</a>
-      <span>Capacitação | Extensão | Pós-graduação | Técnico</span>
-    </div>
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    </nav>
   </div>
   <div class="container rodape__base">
     <span>© <span id="ano">2026</span> $($INST.nome). Todos os direitos reservados.</span>
@@ -386,6 +364,9 @@ function Card($c) {
 }
 
 function TambemOferecemos() {
+  # dica de um amigo do usuário (22/09/2026): os 4 cards repetiam "Consultar no WhatsApp" em
+  # cada um, ficando redundante. Virou uma lista, com uma foto ao lado e um único botão de
+  # WhatsApp em destaque no final, em vez de um link por item.
   $itens = @(
     @('cap',       'Capacitação',   'Cursos rápidos para entrar no mercado.'),
     @('users',     'Extensão',      'Amplie seus conhecimentos com cursos de extensão.'),
@@ -394,17 +375,25 @@ function TambemOferecemos() {
   )
   $h = ''
   foreach ($i in $itens) {
-    $wa = ZapLink ('Olá! Tenho interesse em: ' + $i[1] + '. Pode me passar mais informações?')
-    $h += '      <a class="mais__item" href="' + $wa + '" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-' + $i[0] + '"/></svg><h3>' + $i[1] + '</h3><p>' + $i[2] + '</p><span>Consultar no WhatsApp</span></a>' + "`n"
+    $h += '          <li><span class="oferecemos__ic"><svg class="i" aria-hidden="true"><use href="#i-' + $i[0] + '"/></svg></span><div><strong>' + $i[1] + '</strong><p>' + $i[2] + '</p></div></li>' + "`n"
   }
+  $wa = ZapLink 'Olá! Tenho interesse em capacitação, extensão, pós-graduação ou cursos técnicos. Pode me passar mais informações?'
 @"
     <div class="curso__bloco">
       <header class="secao__cab">
         <span class="pill pill--roxo">Também oferecemos</span>
         <h2 class="secao__titulo">Outras formas de <em>crescer</em></h2>
       </header>
-      <div class="mais__grid">
-$h      </div>
+      <div class="oferecemos">
+        <ul class="oferecemos__lista">
+$h        </ul>
+        <div class="oferecemos__foto">
+          $(Pic 'turma' '(max-width: 860px) 90vw, 420px' 'img-r' $false)
+        </div>
+      </div>
+      <div class="oferecemos__cta">
+        <a class="btn btn--magenta btn--lg" href="$wa" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg> Falar no WhatsApp</a>
+      </div>
     </div>
 "@
 }
@@ -421,7 +410,7 @@ function CtaFinal($titulo, $texto) {
       <p>$texto</p>
     </div>
     <div class="contato__acoes reveal">
-      <a class="btn btn--magenta btn--lg" href="$wa" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg> $($INST.zapExibe)</a>
+      <a class="btn btn--ouro btn--lg" href="$wa" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg> Falar no WhatsApp</a>
       <a class="btn btn--borda btn--lg" href="inscricao.html">Preencher cadastro <svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
@@ -576,25 +565,6 @@ $hero = @"
         <li class="selo"><svg class="i" aria-hidden="true"><use href="#i-heart"/></svg> Prática real</li>
         <li class="selo"><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg> EAD ou semipresencial</li>
       </ul>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="hero__equipe">
-      <div class="credito">
-        <span class="credito__rotulo">Coordenador do Curso</span>
-        <strong class="credito__nome">Dr. Márcio Santiago</strong>
-        <span class="credito__reg">CRO-MS 8513</span>
-      </div>
-      <div class="credito">
-        <span class="credito__rotulo">Diretor Pedagógico</span>
-        <strong class="credito__nome">Dr. Evandro Nolasco</strong>
-        <span class="credito__reg">CRBM-MS 66811</span>
-      </div>
-      <div class="parceria">
-        <span class="parceria__rotulo">Em parceria com</span>
-        <span class="parceria__marca" aria-label="$($INST.parceria)">$($INST.parceria)</span>
-      </div>
     </div>
   </div>
 </section>
